@@ -1,0 +1,60 @@
+import time as t
+bb=float(0)
+l=0
+x=0
+day=0
+money=float(0)
+bbw=1
+print("context: you are a Orthopedist, a doctor who specialises in\ntaking care of the spine, and you\ndon't get many customers and you needed money\nyou break peoples backs so they come to you and pay you money to help you\nyour journey starts in the backpain of the people around you\npress enter to continue")
+e=input("")
+while True:
+    try:
+        day=day+1
+        x += 1
+        bb=bb+bbw
+        if l>=20:
+            bbw=bbw*1000+1
+        money=round(bb/8*15+money,0)
+        t.sleep(0.5)
+        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+        print("day "+str(day))
+        if l>=1:
+            print("backbreakers: "+str(bbw))
+        print("backs broken: "+str(int(round(bb,0))))
+        if l>=2:
+            print("laws created against you: "+str(round(bb/50,0)))
+        print("money: "+str(money))
+        print("\n\n\n\n\n\n\n\n\n")
+        if x>=20:
+            x=0
+            l=l+1
+            if l==1:
+                print("you now have the money to hire people to break backs")
+                c=int(input("how many people do you want to hire? "))
+                sum=c*100
+                if sum>money:
+                    c=round(money/100,0)
+                    print("you could not afford that much and you bought the\nmost you could, "+str(c))
+                    e=input("press enter to continue")
+                sum=c*100
+                money=money-sum
+                bbw+=round(c,0)
+            elif l==2:
+                occu="Mafia boss/Orthopedist"
+                print("you are now becoming a mafia boss buying a base of operations\nand now there are specific laws made against you")
+                c=int(input("how many more backbreakers do you want to hire? "))
+                sum=c*100
+                money=money-1000
+                if sum>money:
+                    c=round(money/100,0)
+                    print("you could not afford that much and you bought the\nmost you could, "+str(c))
+                    e=input("press enter to continue")
+                sum=c*100
+                money=money-sum
+                bbw+=c
+            elif l==3:
+                print("this is the end of backpain simulator DEMO, the next version is ALPHA and it is already out if you want to see how far this will go")
+                e=input("press enter to continue")
+    except:
+        print("error: attempting repair...")
+        t.sleep(1)
