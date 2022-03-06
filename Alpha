@@ -1,0 +1,281 @@
+import time as t
+bb=float(0)
+stopit=False
+l=0
+x=0
+day=0
+occu="Orthopedist"
+money=float(0)
+sd=0
+bbw=1
+sdw=0
+rt=0
+rtw=0
+s=0
+sw=0
+speed=0.5
+ed=0
+edw=0
+law=0
+laww=0
+ad=0
+adw=0
+playname="empty"
+playdo="empty"
+play=0
+playw=0
+companyname="empty"
+print("context: you are a Orthopedist, a doctor who specialises in\ntaking care of the spine, and you\ndon't get many customers and you needed money\nyou break peoples backs so they come to you and pay you money to help you\nyour journey starts in the backpain of the people around you\npress enter to continue")
+e=input("")
+if "cheat menu" in e:
+    l=input("level: ")
+    if l=="":
+        print("level set to defult")
+        l=0
+    else:
+        l=int(l)
+    speed=input("update speed: ")
+    if speed=="":
+        speed=0.5
+        print("speed set to defult")
+    else:
+        speed=float(speed)
+    money=input("money: ")
+    if money=="":
+        money=0
+        print("money set to defult")
+    else:
+        money=float(money)
+while stopit==False:
+    try:
+        day=day+1
+        x += 1
+        bb=bb+bbw
+        if l>=20:
+            bbw=bbw*1000+1
+            sdw=sdw*1000+1
+            rtw=rtw*1000+1
+            sw=sw*1000+1
+        money=round(bb/8*15+money,0)
+        if l>=3:
+            money=round(sd/5*15+money,0)
+            sd+=sdw
+        if l>=5:
+            money=round(rt*15+money,0)
+            rt+=rtw
+        if l>=8:
+            money=round(s*20+money,0)
+            s+=sw
+        if l>=10:
+            money=round(ed*30+money,0)
+            ed+=edw
+        if l>=11:
+            money=round(law*50+money,0)
+            law+=laww
+        if l>=14:
+            money=round(ad*100+money,0)
+            ad+=adw
+        if l>=15:
+            money=round(ad*100+money,0)
+            play+=playw
+        t.sleep(speed)
+        print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+        print("day "+str(day))
+        if l>=11:
+            print("company: "+str(companyname))
+        print("occupation: "+occu)
+        if l>=1:
+            print("backbreakers: "+str(bbw))
+        if l>=3:
+            print("dislocators: "+str(sdw))
+        if l>=5:
+            print("parents: "+str(rtw))
+        if l>=8:
+            print("schools: "+str(sw))
+        if l>=10:
+            print("explosive diareha taco trucks: "+str(edw))
+        if l>=11:
+            print("lawyers: "+str(laww))
+        if l>=14:
+            print("fast food advertisments: "+str(adw))
+        if l>=15:
+            print(playname+": "+str(playw))
+        print("backs broken: "+str(int(round(bb,0))))
+        if l>=3:
+            print("dislocated shoulders: "+str(sd))
+        if l>=5:
+            print("emotional damage: "+str(rt))
+        if l>=8:
+            print("stress: "+str(s))
+        if l>=10:
+            print("broken toilets: "+str(ed))
+        if l>=11:
+            print("company's sued: "+str(law))
+        if l>=14:
+            print("people crying while eating unhealthy lettuce: "+str(ad))
+        if l>=15:
+            print(playdo+": "+str(play))
+        if l>=2:
+            print("laws created against you: "+str(round(bb/50,0)))
+        print("money: "+str(money))
+        print("\n\n\n\n\n\n\n\n\n")
+        if x>=20:
+            x=0
+            l=l+1
+            if l==1:
+                print("you now have the money to hire people to break backs")
+                c=int(input("how many people do you want to hire? "))
+                sum=c*100
+                if sum>money:
+                    c=round(money/100,0)
+                    print("you could not afford that much and you bought the\nmost you could, "+str(c))
+                    e=input("press enter to continue")
+                sum=c*100
+                money=money-sum
+                bbw+=round(c,0)
+            elif l==2:
+                occu="Mafia boss/Orthopedist"
+                print("you are now becoming a mafia boss buying a base of operations\nand now there are specific laws made against you")
+                c=int(input("how many more backbreakers do you want to hire? "))
+                sum=c*100
+                money=money-1000
+                if sum>money:
+                    c=round(money/100,0)
+                    print("you could not afford that much and you bought the\nmost you could, "+str(c))
+                    e=input("press enter to continue")
+                sum=c*100
+                money=money-sum
+                bbw+=c
+            elif l==3:
+                print("you are now moving up the ranks, you are becoming a better Orthopedist\nnow you can work on limbs\nyou want to be the richest person on the planet\nyou go to do something a little more\n you begin to dislocate shoulders of the people of earth")
+                c=int(input("how many dislocators do you want to buy? "))
+                sum=c*250
+                if sum>money:
+                    c=round(money/250,0)
+                    print("you could not afford that much and you bought the\nmost you could, "+str(c))
+                    e=input("press enter to continue")
+                sum=c*250
+                money=money-sum
+                sdw+=c
+            elif l==4:
+                print("BREAKING NEWS\npeople around the world are running for their backs and shoulders\nthere is a new bodywash called \"backs and shoulders\"\nwith a starring 12 millon sales\nafter only 20 days\nand remember, watch your backs, literally")
+                e=input("press enter to continue")
+            elif l==5:
+                occu="Mafia boss/Orthopedist/Tharapist/\"Hospital Owner\""
+                print("you bought a \"hospital\" to heal people in need\nyou are now a full time mafia boss\nyou bring out the new strongest weapon you have, emotional damage.\nyou will start to cause PTSD and really any bad physological condition\nyou now hire people to be parents since that is the best way to cause emotional damage")
+                c=int(input("how many parents would you like? "))
+                sum=c*500
+                if sum>money:
+                    c=round(money/500,0)
+                    print("you could not afford that much and you bought the\nmost you could, "+str(c))
+                    e=input("press enter to continue")
+                sum=c*500
+                money=money-sum
+                rtw+=c
+            elif l==6:
+                print("more and more people are damaged from the pain you cause\nyou take the 120th day as a change\nto up your game")
+                c=int(input("how many more backbreakers(100 each) would you like? "))
+                sum=c*100
+                if sum>money:
+                    c=round(money/100,0)
+                    print("you could not afford that much and you bought the\nmost you could, "+str(c))
+                    e=input("press enter to continue")
+                sum=c*100
+                money=money-sum
+                bbw+=c
+                c=int(input("how many more dislocators(250 each) would you like? "))
+                sum=c*250
+                if sum>money:
+                    c=round(money/250,0)
+                    print("you could not afford that much and you bought the\nmost you could, "+str(c))
+                    e=input("press enter to continue")
+                sum=c*250
+                money=money-sum
+                sdw+=c
+                c=int(input("how many more parents(500 each) would you like? "))
+                sum=c*500
+                if sum>money:
+                    c=round(money/500,0)
+                    print("you could not afford that much and you bought the\nmost you could, "+str(c))
+                    e=input("press enter to continue")
+                sum=c*500
+                money=money-sum
+                rtw+=c
+            elif l==7:
+                print("!BREAKING NEWS!\nyour parents won't help you\nyou can't trust anything please see your local tharapist\ngood luck in life if you can keep it and also, watch your backs, literally, again.")
+                e=input("press enter to continue")
+            elif l==8:
+                occu="Mafia boss/Orthopedist/Tharapist/\"Hospital Owner\"/Headmaster"
+                print("Your newest trick to the pain of others is one of the most powerful, school, you begin to build schools good on the outside much much MUCH MUCH! worse on the inside\nthey cause way to much stress")
+                c=int(input("how many more schools would you like? "))
+                sum=c*1000
+                if sum>money:
+                    c=round(money/1000,0)
+                    print("you could not afford that much and you bought the\nmost you could, "+str(c))
+                    e=input("press enter to continue")
+                sum=c*1000
+                money=money-sum
+                sw+=c
+            elif l==9:
+                print("BREAKING NEWS SO PRETTY MUCH NORMAL NEWS\nan education can be dangerous now forget everything else you though about it being good\nstudents were right the whole time, learning math does suck.")
+                e=input("press enter to continue")
+            elif l==10:
+                occu="Mafia boss\Orthopedist/Tharapist/\"Hospital Owner\"/Headmaster\Evil Mexican"
+                print("you get taco trucks that are really good\nbut in reality they cause diareha\nexplosive diareha breaking toilets for you to fix\nand get paied")
+                c=int(input("how many explosive diareha inducing tacos trucks would you like? "))
+                sum=c*2500
+                if sum>money:
+                    c=round(money/2500,0)
+                    print("you could not afford that much and you bought the\nmost you could, "+str(c))
+                    e=input("press enter to continue")
+                sum=c*2500
+                money=money-sum
+                edw+=c
+            elif l==11:
+                print("you create a company that has lawyers so you can\nsue other company's like ToysRUs")
+                companyname=input("company name: ")
+                c=int(input("how many lawyers would you like? "))
+                sum=c*5000
+                if sum>money:
+                    c=round(money/5000,0)
+                    print("you could not afford that much and you bought the\nmost you could, "+str(c))
+                    e=input("press enter to continue")
+                sum=c*5000
+                money=money-sum
+                laww+=c
+            elif l==12:
+                print("BREAKING NEWS\nToysRUs has been sued and gone out of buissness\nalong with many other company's\nthey have all been sued by "+str(companyname)+"\nsay goodbye to really anything you knew\nthe worlds changing it's time we change to,\nif we can without a broken back")
+                e=input("press enter to continue")
+            elif l==13:
+                occu="Mafia boss\Orthopedist/Tharapist/\"Hospital Owner\"/Headmaster\Evil Mexican\Owner of the Planet"
+                print("you decide you want to run for president of the world\nyou walk up to the podium\nand begin your speech")
+                c=input("you said: ")
+                print("\npeople did not really like your speech but you have the lawyers to\ntake over the planet to begin with\nyou are now the government of the planet")
+                e=input("press enter to continue")
+            elif l==14:
+                print("as your first order of buissness as owner of the planet\nyou ban any good and tasty foods and you take away\nall the food. you leave behind unhealy distastful food that people would need to eat to live\nyou put up advertisments across the planet of fast food\nconstantly reminding them of what they could have leaving them in pure pain")
+                c=int(input("how many advertisments would you like? "))
+                sum=c*10000
+                if sum>money:
+                    c=round(money/10000,0)
+                    print("you could not afford that much and you bought the\nmost you could, "+str(c))
+                    e=input("press enter to continue")
+                sum=c*10000
+                money=money-sum
+                adw+=c
+            elif l==15:
+                print("now instead of just being given something\nyou will be able to create something\nyou can choose what it does and such")
+                playname=input("what do you want to call it: ")
+                playdo=input("what will it cause: ")
+                c=int(input("how many "+playname+" would you like? "))
+                sum=c*10000
+                if sum>money:
+                    c=round(money/10000,0)
+                    print("you could not afford that much and you bought the\nmost you could, "+str(c))
+                    e=input("press enter to continue")
+                sum=c*10000
+                money=money-sum
+                playw+=c
+    except:
+        print("error: attempting repair...")
+        t.sleep(1)
