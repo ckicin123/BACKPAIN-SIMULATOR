@@ -147,7 +147,7 @@ while stopit==False:
                 money=money-sum
                 bbw+=c
             elif l==3:
-                print("you are now moving up the ranks, you are becoming a better Orthopedist\nnow you can work on limbs\nyou want to be the richest person on the planet\nyou go to do something a little more\n you begin to dislocate shoulders of the people of earth")
+                print("you are now moving up the ranks, you are becoming a better Orthopedist\nnow you can work on limbs\nyou want to be the richest person on the planet\nyou go to do something a little more\nyou begin to dislocate shoulders of the people of earth")
                 c=int(input("how many dislocators do you want to buy? "))
                 sum=c*250
                 if sum>money:
